@@ -83,6 +83,7 @@ export class BlockchainService {
       value: ethers.parseEther(params.amountEth),
     });
     const receipt = await tx.wait();
+    if (!receipt) throw new Error('Payment transaction was not mined');
     return { txHash: receipt.hash };
   }
 

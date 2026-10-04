@@ -144,7 +144,7 @@ export class LongTermRentalService {
     });
 
     const totalMonthlyRevenue = activeLeases.reduce(
-      (sum, lease) => sum + lease.monthlyRent,
+      (sum: number, lease: { monthlyRent: number }) => sum + lease.monthlyRent,
       0
     );
 

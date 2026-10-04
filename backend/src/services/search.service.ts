@@ -159,8 +159,8 @@ export class SearchService {
     ]);
 
     return {
-      titles: titles.map(t => t.title),
-      districts: districts.map(d => d.district),
+      titles: titles.map((t: { title: string }) => t.title),
+      districts: districts.map((d: { district: string }) => d.district),
     };
   }
 
@@ -173,7 +173,7 @@ export class SearchService {
       take: limit,
     });
 
-    return popularDistricts.map(d => ({
+    return popularDistricts.map((d: { district: string; _count: { id: number } }) => ({
       district: d.district,
       count: d._count.id,
     }));

@@ -5,6 +5,7 @@ import { Providers } from './providers';
 import NavbarWrapper from '@/components/layout/NavbarWrapper';
 import FooterWrapper from '@/components/layout/FooterWrapper';
 import AIChatAssistant from '@/components/AIChatAssistant';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Kigali Real Estate Booking',
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FooterWrapper />
           <AIChatAssistant />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
